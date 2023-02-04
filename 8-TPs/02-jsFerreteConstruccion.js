@@ -5,14 +5,54 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 */
 
 function Rectangulo () 
-{
+{   
+    let largoTerreno
+    let anchoTerreno
+    let resultado
 
+    largoTerreno = document.getElementById("txtIdLargo").value
+    anchoTerreno = document.getElementById("txtIdAncho").value
+
+    largoTerreno = parseInt(largoTerreno)
+    anchoTerreno = parseInt(anchoTerreno)
+
+    resultado = largoTerreno + anchoTerreno
+
+    alert("La cantidad de alambre a comprar es: " + resultado / 3)
 }
 function Circulo () 
 {
+    let largoTerreno
+    let anchoTerreno
+    let radioTerreno
+    let resultado
+
+    largoTerreno = document.getElementById("txtIdLargo").value
+    anchoTerreno = document.getElementById("txtIdAncho").value
+    radioTerreno = document.getElementById("txtIdRadio").value
+
+    largoTerreno = parseInt(largoTerreno)
+    anchoTerreno = parseInt(anchoTerreno)
+    radioTerreno = parseInt(radioTerreno)
+
+    resultado = largoTerreno + anchoTerreno + radioTerreno
+
+    alert("La cantidad de alambre a comprar es: " + resultado / 3)
 	
 }
 function Materiales () 
 {
-	
+    let largoTerreno
+    let anchoTerreno
+    let resultado
+
+    largoTerreno = document.getElementById("txtIdLargo").value
+    anchoTerreno = document.getElementById("txtIdAncho").value
+
+    largoTerreno = parseInt(largoTerreno)
+    anchoTerreno = parseInt(anchoTerreno)
+
+    resultado = largoTerreno + anchoTerreno
+
+    alert("La cantidad de bolsas de cemento a comprar es de " + (resultado * 2) + " y la cantidad de bolsas de cal es de " + (resultado * 3))
 }

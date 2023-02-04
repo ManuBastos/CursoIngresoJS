@@ -2,7 +2,9 @@
 Debemos lograr tomar Los numeros por ID ,
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resulto por medio de "ALERT"
-ej.: "la Resta es 750"*/ 
+ej.: "la Resta es 750"
+
+Manuel Bastos Gonzalez - Div X */ 
 
 function sumar()
 {	
@@ -29,7 +31,7 @@ function restar()
 	numero = parseInt(numero)
 	otroNumero = parseInt(otroNumero)
 
-	alert("El resultado es: " + (numero-otroNumero))
+	alert("El resultado es: " + (numero - otroNumero))
 }
 
 function multiplicar()
@@ -43,7 +45,7 @@ function multiplicar()
 	numero = parseInt(numero)
 	otroNumero = parseInt(otroNumero)
 
-	alert("El resultado es: " + (numero*otroNumero))
+	alert("El resultado es: " + (numero *otroNumero))
 }
 
 function dividir()
@@ -57,6 +59,6 @@ function dividir()
 	numero = parseInt(numero)
 	otroNumero = parseInt(otroNumero)
 	
-	alert("El resultado es: " + (numero/otroNumero))
+	alert("El resultado es: " + (numero / otroNumero))
 }
 
