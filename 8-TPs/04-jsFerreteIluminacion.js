@@ -10,6 +10,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {   
+    /* // Con IF
     let cantidadLamparas;
     let precioFinal;
     let marca;
@@ -107,5 +108,80 @@ function CalcularPrecio ()
         precioFinal = precioFinal + impuestosBrutos;
     }
     
+    document.getElementById("txtIdprecioDescuento").value = precioFinal; */
+
+    // Con Switch
+    let cantidadLamparas;
+    let precioFinal;
+    let marca;
+    let porcentaje;
+
+    const PRECIOLAMPARA = 35;
+
+    porcentaje = 0;
+
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+    marca = document.getElementById("Marca").value;
+
+    precioFinal = cantidadLamparas * PRECIOLAMPARA;
+
+    switch (cantidadLamparas) {
+        case 5:
+            switch (marca) {
+                case "ArgentinaLuz":
+                    porcentaje = -40;
+                    break;
+                default:
+                    porcentaje = -30;
+                    break;
+            }
+            break;
+        case 4: 
+            switch (marca) {
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    porcentaje = -25;
+                    break;
+                default:
+                    porcentaje = -20;
+                    break;
+            }
+            break;
+        case 3: 
+            switch (marca) {
+                case "ArgentinaLuz":
+                    porcentaje = -15;
+                    break;
+                case "FelipeLamparas":
+                    porcentaje = -10;
+                    break;
+                default:
+                    porcentaje = -5;
+                    break;
+            }
+            break;
+        case 1:
+        case 2:
+            precioFinal;
+            break;
+        default:
+            porcentaje = -50;
+            break;
+    }
+
+    precioFinal = precioFinal + (precioFinal * porcentaje / 100)
+
+    if (precioFinal > 120) 
+    {
+        let impuestosBrutos;
+        impuestosBrutos = precioFinal * 0.10;
+        
+        alert("Usted pagó $" + impuestosBrutos.toFixed(2) + " de impuestos brutos");
+        
+        precioFinal = precioFinal + impuestosBrutos;
+    }
+                    
     document.getElementById("txtIdprecioDescuento").value = precioFinal;
+
 }

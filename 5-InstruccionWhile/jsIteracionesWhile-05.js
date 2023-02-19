@@ -1,12 +1,24 @@
 /*
 Al presionar el botón pedir un sexo
-'f' para femenino, 'm' para masculino.*/
+'f' para femenino, 'm' para masculino.
+
+Manuel Bastos Gonzalez - Div X */
 function mostrar()
 {
-	var sexoIngresado;
-	sexoIngresado = prompt("ingrese f ó m .");
+	/* let sexoIndicado;
+	sexoIndicado = prompt("Indique su sexo: f (femenino) o m (masculino)");
 
+	while (sexoIndicado != "f" && sexoIndicado != "m") {
+		sexoIndicado = prompt("Sexo incorrecto. Indique si su sexo: f (femenino) o m (masculino)");
+	}
 
+	document.getElementById("txtIdSexo").value = "El sexo indicado es " + sexoIndicado; */
 
-	txtIdSexo.value=sexoIngresado;
-}//FIN DE LA FUNCIÓN
+	let sexoIndicado;
+
+	do {
+		sexoIndicado = prompt("Indique su sexo: f (femenino) o m (masculino)");
+	} while (sexoIndicado != "f" && sexoIndicado != "m");
+
+	document.getElementById("txtIdSexo").value = "El sexo indicado es " + sexoIndicado;
+}
