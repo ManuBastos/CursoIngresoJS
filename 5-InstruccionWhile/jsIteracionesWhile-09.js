@@ -1,21 +1,39 @@
-/*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
+// Manuel Bastos Gonzalez - Div X
 function mostrar()
-{	// declarar variables
-	var banderaDelPrimero;
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var respuesta;
-	//iniciar variables
-	banderaDelPrimero="es el primero";
-	respuesta='si';
-	while(respuesta=="si")
+{
+	let numero;
+	let respuesta;
+	let minimo;
+	let maximo;
+	let flag;
+
+	respuesta = 's';
+	flag = true;
+
+	while (respuesta == 's') 
 	{
+		numero = prompt("Ingrese un número:");
+		numero = parseInt(numero);
+
+		if (flag == true) {
+			minimo = numero;
+			maximo = numero;
+			flag = false;
+		}
 		
-		respuesta=prompt("desea continuar?");
+		if (numero > maximo)
+		{
+			maximo = numero;
+		}
+		
+		if (numero < minimo)
+		{
+			minimo = numero;
+		}
+	
+		respuesta = prompt("¿Desea ingresar otro número? Responda s/n");
 	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
-}//FIN DE LA FUNCIÓN
+	
+	document.getElementById("txtIdMaximo").value = maximo;
+	document.getElementById("txtIdMinimo").value = minimo;
+}

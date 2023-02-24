@@ -3,39 +3,35 @@ function mostrar()
 {
 	let numero;
 	let respuesta;
-	let contador;
-	let acumulador;
-	let promedio;
 	let sumaPositivos;
-	let sumaNegativos;
+	let productoNegativos;
+	let flag;
 
 	respuesta = 's';
-	contador = 0
-	acumulador = 0;
-	promedio = 0;
-	sumaNegativos = 0;
+	productoNegativos = 1;
 	sumaPositivos = 0;
+	flag = true;
 	
 	while (respuesta == 's') 
 	{
 		numero = prompt("Ingrese un número:");
 		numero = parseInt(numero);
+		
+		if (numero >= 0) {
+			sumaPositivos = sumaPositivos + numero;
+		}
+		else {
+			flag = false
+			productoNegativos = productoNegativos * numero;
+		}
+		
+		if (flag == true) {
+			productoNegativos = 0;
+		}
 
-		acumulador = acumulador + numero;
-		contador = contador + 1
-		
-		promedio = acumulador / contador;
-		
-		if (numero > 0) {
-			sumaPositivos = sumaPositivos + numero
-		}
-		else if (numero < 0) {
-			sumaNegativos = sumaNegativos + numero
-		}
-		
 		respuesta = prompt("¿Desea ingresar otro número? Responda s/n");
 	}
 	
 	document.getElementById("txtIdSuma").value = sumaPositivos;
-	document.getElementById("txtIdProducto").value = sumaNegativos;
+	document.getElementById("txtIdProducto").value = productoNegativos;
 }
